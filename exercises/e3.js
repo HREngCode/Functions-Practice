@@ -15,23 +15,19 @@
  */
 
 // Your code goes here...
-function doesArrayIncludeItemsBetweenVals([array], val1, val2) {
-  if((array[0] > val1 && array[0] < val2) || (array[1] > val1 && array[1] < val2) || (array[2] > val1 && array[2] < val2)) {
-    return (
-      true
-    );
+function doesArrayIncludeItemsBetweenVals(array, val1, val2)  {
+  for (var i = 0; i < array.length; i++) {
+    if(array[i] > val1 && array[i] < val2) {
+      return true;
+    }
   }
-  else {
-    return (
-      false
-    );
-  }
+  return false;
 }
 
 var numbers = [2, 4, 2];
 
-var value1 = doesArrayIncludeItemsBetweenVals([numbers], 3, 5);
-var value2 = doesArrayIncludeItemsBetweenVals([numbers], 5, 10);
+var value1 = doesArrayIncludeItemsBetweenVals(numbers, 3, 5);
+var value2 = doesArrayIncludeItemsBetweenVals(numbers, 5, 10);
 
 console.log(value1);
 console.log(value2);
